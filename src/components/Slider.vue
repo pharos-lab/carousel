@@ -1,7 +1,7 @@
 <template>
-    <div class="slider">
+    <div class="slider relative flex gap-4">
         <slot></slot>
-        <div class="controls">
+        <div class="controls absolute top-1/2 bg-slate-500">
 
         </div>
     </div>
@@ -16,5 +16,5 @@ const props = defineProps({
 
 const currentSlide = ref(0)
 
-provide('slider', { currentSlide, visible: currentSlide.value + props.visible })
+provide('slider', { currentSlide, visible: currentSlide.value + props.visible, slideProp: props })
 </script>
